@@ -122,7 +122,8 @@ Navbar
 ===============
 */
 nav {
-  background: var(--clr-primary);
+  /* background: var(--clr-primary); */
+  background: rgb(153, 4, 252);
   padding: 1.25rem 2rem;
 }
 .nav-center {
