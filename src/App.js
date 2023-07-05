@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// components
+import Navbar from './components/Navbar';
+import CartContainer from './components/CartContainer';
+// items
+import cartItems from './cart-items';
+// redux stuff
+
+//store -stores data, think of state
+//reducer -function that used to update store
+//two arguments -state, action
+//state - old state/state before update
+//action -what happened/ what update
+//return updated or old state
+
+import { createStore } from 'redux';
+//initial store
+const initialStore = {
+  coun: 0,
+};
+//reducer
+function reducer(state, action) {
+  console.log({ state, action });
+  return state;
+}
+
+const store = createStore(reducer, initialStore);
 
 function App() {
+  // cart setup
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Navbar />
+      <CartContainer cart={cartItems} />
+    </main>
   );
 }
 
